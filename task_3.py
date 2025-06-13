@@ -4,7 +4,7 @@ def normalize_phone(phone_number: str) -> str:
     # Remove all characters except digits
     digits_only = re.sub(r"\D", "", phone_number)
 
-    # If number starts with '380' — add '+' in front
+    # If number starts with '38' — add '+' in front
     if digits_only.startswith("38"):
         return "+" + digits_only
 
