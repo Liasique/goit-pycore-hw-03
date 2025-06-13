@@ -1,4 +1,3 @@
-
 from datetime import datetime
 
 def get_upcoming_birthdays(users):
