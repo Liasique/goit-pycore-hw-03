@@ -1,8 +1,37 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 def get_upcoming_birthdays(users):
     today = datetime.today().date()
-    return []
+    result = []
+
+    for person in users:
+        # Convert birthday string to date
+        birthday = datetime.strptime(person["birthday"], "%Y.%m.%d").date()
+
+        # Use birthday in current year
+        birthday_this_year = birthday.replace(year=today.year)
+
+        # If already passed this year — take next year
+        if birthday_this_year < today:
+            birthday_this_year = birthday_this_year.replace(year=today.year + 1)
+
+        # Check if birthday is within 7 days from today
+        if 0 <= (birthday_this_year - today).days <= 7:
+            greet_date = birthday_this_year
+
+            # If birthday on weekend, move to Monday
+            if greet_date.weekday() == 5:  # Saturday
+                greet_date += timedelta(days=2)
+            elif greet_date.weekday() == 6:  # Sunday
+                greet_date += timedelta(days=1)
+
+            # Add to result list
+            result.append({
+                "name": person["name"],
+                "congratulation_date": greet_date.strftime("%Y.%m.%d")
+            })
+
+    return result
 
 """Завдання 4
 
