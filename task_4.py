@@ -33,7 +33,7 @@ def get_upcoming_birthdays(users):
 
     return result
 
-# 🧪 Example usage (можеш змінити дати під поточний тиждень)
+#  Example
 if __name__ == "__main__":
     users = [
         {"name": "John Doe", "birthday": "1985.06.15"},
