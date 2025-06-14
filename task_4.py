@@ -45,6 +45,12 @@ if __name__ == "__main__":
     upcoming = get_upcoming_birthdays(users)
     print("Список привітань на цьому тижні:", upcoming)
 
+    """
+    TERMINAL:
+    goit-pycore-hw-03 git:(main) ✗ /usr/local/bin/python3 /Users/olga/Developer/goit-pycore-hw-03/task_4.py
+    Список привітань на цьому тижні: [{'name': 'John Doe', 'congratulation_date': '2025.06.16'}, {'name': 'Jane Smith', 'congratulation_date': '2025.06.17'}, {'name': 'Olga', 'congratulation_date': '2025.06.16'}]
+    """
+
 """Завдання 4
 
 У межах вашої організації, ви відповідаєте за організацію привітань колег з днем народження. Щоб оптимізувати цей процес, вам потрібно створити функцію get_upcoming_birthdays, яка допоможе вам визначати, кого з колег потрібно привітати. Функція повинна повернути список всіх у кого день народження вперед на 7 днів включаючи поточний день.
